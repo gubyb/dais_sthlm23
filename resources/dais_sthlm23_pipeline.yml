@@ -1,0 +1,12 @@
+# The main pipeline for dais_sthlm23
+resources:
+  pipelines:
+    dais_sthlm23_pipeline:
+      name: dais_sthlm23_pipeline
+      target: dais_sthlm23_${bundle.environment}
+      libraries:
+        - notebook:
+            path: ../src/dlt_pipeline.ipynb
+
+      configuration:
+        bundle.sourcePath: /Workspace/${workspace.file_path}/src
